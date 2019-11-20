@@ -4,24 +4,28 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CAN</title>
+    <title>cCAN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">        
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/template.css') }}">
 </head> 
 
     <body>         
-            <h1>Conditional adversarial networks</h1>      
-        <form method="POST" action="/">    
-            <div class="buttons"></div>
-                {{ form.hidden_tag() }}
-                {{ form.generate_images(class_='buttons') }}        
-            </div>   
+            <h2>cGAN project</h2>      
+            <a href="https://github.com/VladAleshin/can">GitHub</a>
+            <p>
+                Conditional generative adversarial network was trained on WikiArt dataset with 10 classes. For test click the button...
+            </p>            
+
+        <form method="POST" action="/">                
+                {{ form.hidden_tag() }}                    
+                <input class="btn" id="generate_images" name="generate_images" type="submit" value="Generate images">  
         </form>
         <br>
         <br>
-        <img id="output1" src="{{ user_image1 }}"  border="0"  width="20" style="width:300px;height:300px;"/>	
-        <img id="output2" src="{{ user_image2 }}"  border="0"  width="20" style="width:300px;height:300px;"/>
-        <img id="output3" src="{{ user_image3 }}"  border="0"  width="20" style="width:300px;height:300px;"/>        
+        <br>
+        <img id="output1"  class="{{ is_visible }}" src="{{ user_image1 }}"  border="1" style="width:300px;height:300px;"/>	
+        <img id="output2" class="{{ is_visible }}" src="{{ user_image2 }}"  border="1" style="width:300px;height:300px;"/>
+        <img id="output3" class="{{ is_visible }}" src="{{ user_image3 }}"  border="1" style="width:300px;height:300px;"/>        
 
     </body>
 

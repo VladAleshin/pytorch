@@ -1,4 +1,4 @@
-html,body
+html, body
 {
   width: 100%;
   margin: 0em;
@@ -13,13 +13,6 @@ h1 {
   margin: 1em;
 }
 
-hr {
-  width: 90%;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  max-width: 50em;
-}
-
 p {
   font-size: 1em; 
   width: 90%;
@@ -29,232 +22,25 @@ p {
   margin-bottom: 1em;
   max-width: 50em;
 }
-p.project_description {
-  text-align: left;
-  margin-left: inherit;
-  margin-right: inherit;
-  width: 100%;
-  font-size: 1em;
-}
-
-div.row {
-  text-align: center;
-  max-width: 50em;
-  display: inline-block;
-  vertical-align: middle;
-  width: 95%;
-  margin: 0em
-}
-
-div.column_left {
-  box-sizing: border-box;
-/*  float: none;*/
-  text-align: left;
-  display: table-cell;
-  width: 40%;
-  padding: 1em;
-  vertical-align: middle;
-}
-div.column_right {
-  box-sizing: border-box;
-  width: 60%;
-  padding: 1em;
-  text-align: left;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-@media screen and (max-width: 29em) {
-  div.row {
-    text-align: center;
-    display: table-cell;
-    width: 90%
-  } 
-  div.column_left {
-    width: 70%;
-    float: none;
-    text-align: center;
-    display: inline-block;
-    padding: 0em;
-  }
-  div.column_right {
-    width: 90%;
-    text-align: center;
-    float: none;
-    display: inline-block;
-  }
-  p.project_description {
-    text-align: center;
-  }
-}
-
-ul.breadcrumb {
-  margin-top: 2.7em;
-/*  margin-bottom: 1em;*/
-  text-align: center;
-  font-family: monospace;
-  padding: 0em;
-}
-
-ul.social_buttons {
-  margin-top: 2em;
-  margin-bottom: 2em;
-  text-align: center;
-  font-family: monospace;
-  padding: 0em;
-}
-
-ul.proj_buttons {
-  padding: 0em;
-  font-size: 1em;
-}
-
-li {
-  display: inline-block;
-  justify-content: center;
-}
-
-li.social_buttons {
-  padding-left: 1em;
-  padding-right: 1em;
-}
-
-.bread_crumb {
-  color: #333;
-}
-.bread_crumb:link {
-  text-decoration: none;
-  color: #333;
-  border-bottom: 0.2ex dashed;
-  text-decoration: none;
-  transition: color 0.3s linear;
-}
-.bread_crumb:hover {
-  color: rgba(70, 20, 140, 0.8);
-}
-
-div.buttons {
-  margin: 2em;
-  
-}
-
-div.preview {
-  margin-top: 1ex;
-  margin-bottom: 1.1em;
-  max-width: 95%;
-  text-align: center;
-  display: inline-block;
-}
 
 img {
   width: 100%;
 }
 
-img.thumbnail {
-  width: 100%;
-}
-
-label.btn, button.btn {
+.btn {
   font-family: monospace;
   border: 0.2ex solid #ccc;
-  display: inline-block;
+  display: inline-flexbox;
   padding: 0.5em 1em;
   cursor: pointer;
-  background-color: white;
-  color: #4CAF50;
-}
-label.btn:hover, button.btn:hover {
-  border: 0.2ex solid #333;
-}
-label.hide, button.hide {
-  display: none;
-}
-
-button.progress {
-  color: #C1C1C1;
-  pointer-events: none;
-  border: 0.2ex solid white;
-}
-
-footer.version {
-  font-family: monospace;
-  font-size: 1em;
-  text-align: right;
-  position: fixed;
-  bottom: 0em;
-  right: 1ex;
-  width: 100%;
-  line-height: 3ex;
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.7);
-}
-#status_ok {
-  color: limegreen;
-}
-#status_down {
-  color: orangered;
-}
-
-input[type="file"] {
-  display: none;
-}
-
-a.social {
-  color: #333;
-  font-size: 1em;
-}
-a.social:link {
-  font-size: 1.2em;
-  text-decoration: none;
-  border-bottom: 0.2ex dashed;
-  transition: color 0.3s linear;
-}
-a.social:hover {
-  color: rgba(70, 20, 140, 0.8);
-}
-
-p.disclaimer {
-  font-family: monospace;
-  font-size: 1em;
-  line-height: 1.3em;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50em;
-}
-
-a.project {
-  font-family: monospace;
-  text-align: center;
-  font-size: 1.2em;
-  margin-left: auto;
-  margin-right: auto;
+  background-color: rgb(255, 255, 255);
   color: #333;
 }
-a.project:link {
-  text-decoration: none;
-  border-bottom: 0.2ex dashed;
-  transition: color 0.3s linear;
-  line-height: 1.3em;
-}
-a.project:hover {
-  color: rgba(70, 20, 140, 0.8);
+
+.not-visible {
+  visibility: hidden;
 }
 
-a.proj_buttons {
-  font-family: monospace;
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333;
-}
-a.proj_buttons:link {
-  text-decoration: none;
-  border-bottom: 0.2ex dashed;
-  transition: color 0.3s linear;
-  line-height: 1.3em;
-  margin-right: 1em;
-}
-a.proj_buttons:hover {
-  color: rgba(70, 20, 140, 0.8);
+.visible {
+  visibility: visible;
 }
