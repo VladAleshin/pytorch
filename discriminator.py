@@ -35,13 +35,12 @@ class Discriminator(nn.Module):
             nn.Conv2d(512, 512, kernel_size=4, stride=2, padding=1,
                      bias=False),
             nn.BatchNorm2d(512),
-            nn.LeakyReLU(0.2, inplace=True)          
-            
+            nn.LeakyReLU(0.2, inplace=True),            
         )
         
-        self.lin = nn.Sequential(
-            nn.Linear(512 * 4 * 4, 1),
-            nn.Sigmoid()       
+        self.conv_sigmoid = nn.Sequential(
+            nn.Conv2d(512, 1, kernel_size=4, bias=False),
+            nn.Sigmoid()      
         )    
         
         self.classify = nn.Sequential(
@@ -56,9 +55,7 @@ class Discriminator(nn.Module):
         )        
     
     def forward(self, x):      
-        x = self.main(x) 
-        x = x.view(-1, 512 * 4 * 4)       
-        probabilities =  self.lin(x)          
-        class_out = self.classify(x)    
-        
-        return probabilities, class_out
+        x = self.main(x)                 
+        probabilities =  self.conv_sigmoid(x).view(-1, 1)          
+        x = x.view(-1, 512 * 4 * 4)        
+        return probabilities, self.classify(x)
